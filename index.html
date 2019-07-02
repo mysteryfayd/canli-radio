@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Canli Radio</title>
+
+  <link rel="stylesheet" media="all" href="css/app.css" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffc901">
+  <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffc901">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="site-header">
+    <div class="site-header__nav-search-wrapper">
+      <div class="container">
+        <div class="menu-container" id="toggle">
+          <a href="#" class="menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a href="page.html">Главная</a></li>
+            <li><a href="#">Аудиокниги</a></li>
+            <li><a href="#">Язык</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Спецпроекты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- search -->
+    <!-- <div class="site-header__search">
+        <a class="site-header__search-btn" href="#">
+          <svg class="site-header__ico" width="20" height="20">
+            <use xlink:href="./img/sprite.svg#icon-search2"></use>
+          </svg>
+        </a>
+      </div> -->
+
+    <!-- logo -->
+    <div class="site-header__logo-wrapper">
+      <!-- <a class="site-hedaer__logo-wrapper site-header__logo" href="#">Canli Radio</a> -->
+      <a class="site-hedaer__logo-wrapper" href="#">
+        <img class="site-header__logo-phone" src="./img/logo.png" alt="Логотип Canli Radio">
+        <img class="site-header__logo" src="./img/logo2.png" alt="Логотип Canli Radio">
+      </a>
+    </div>
+    <!-- social links -->
+    <ul class="site-header__social">
+      <li class="site-header__social-item">
+        <a class="site-header__social-link" href="https://www.youtube.com/channel/UCHuZSREwSzL_g7zGabDw1pw"
+          title="Canli Radio в YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </li>
+      <li class="site-header__social-item">
+        <a class="site-header__social-link" href="https://www.facebook.com/canliradioqirim/"
+          title="Canli Radio в Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+      <li class="site-header__social-item">
+        <a class="site-header__social-link" href="https://www.instagram.com/canli_radio/?hl=uk"
+          title="Canli Radio в Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li class="site-header__social-item">
+        <a class="site-header__social-link site-header__donate-link" href="#"
+          title="Поддержать проект Canli Radio">DONATE</a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- main content -->
+  <main>
+    <!-- SECTION music player -->
+    <section class="player">
+      <div class="player__main">
+        <div class="player__previous-song">
+          <h2>РЕАНА ТАРКОВА & JAMDEEN - Мавы Бонджук</h2>
+          <p>предыдущая песня</p>
+        </div>
+
+        <div class="player__current-song">
+          <!-- autoplay -->
+          <!-- <audio src="http://212.110.158.134:8000/canli" controls></audio> -->
+
+          <div id="station0" class="station">
+            <button class="player__btn">
+              <svg class="player__icon player__icon-play" width="50" height="50">
+                <use xlink:href="./img/sprite.svg#icon-play"></use>
+              </svg>
+              <!-- <svg class="player__icon player__icon-pause" width="50" height="50">
+                <use xlink:href="./img/sprite.svg#icon-pause"></use>
+              </svg> -->
+            </button>
+            <div class="title">
+              <div id="title0" class="subtitle"></div>
+              <div id="live0" class="live">Live</div>
+              <div id="playing0" class="playing"></div>
+            </div>
+          </div>
+          <!-- <input id="sliderBtn" class="player__volume" type="range" min="0" max="1" step="0.01" value=1> -->
+          <!-- текушая песня -->
+        </div>
+        <!-- END PLAYER -->
+
+        <div class="player__next-song">
+          <h2>BOBAN MARKOVICH ORCHESTRA - Benim Gecem</h2>
+          <p>следующая песня</p>
+        </div>
+      </div>
+
+      <ul class="player__genre">
+        <li class="player__genre-item">
+          <svg class="player__icon player__genre-item-play" width="25" height="25">
+            <use xlink:href="./img/sprite.svg#icon-play"></use>
+          </svg>
+          <p class="player__genre-item-title">Pop</p>
+        </li>
+        <li class="player__genre-item">
+          <svg class="player__icon player__genre-item-play" width="25" height="25">
+            <use xlink:href="./img/sprite.svg#icon-play"></use>
+          </svg>
+          <p class="player__genre-item-title">Jazz</p>
+        </li>
+        <li class="player__genre-item">
+          <svg class="player__icon player__genre-item-play" width="25" height="25">
+            <use xlink:href="./img/sprite.svg#icon-play"></use>
+          </svg>
+          <p class="player__genre-item-title">Retro</p>
+        </li>
+        <li class="player__genre-item">
+          <svg class="player__icon player__genre-item-play" width="25" height="25">
+            <use xlink:href="./img/sprite.svg#icon-play"></use>
+          </svg>
+          <p class="player__genre-item-title">Kids</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION slider -->
+    <section class="slider">
+      <div class="slider__glide">
+        <div class="slider__wrapper glide__track" data-glide-el="track">
+          <ul class="glide__slides slider__slides">
+            <li class="glide__slide slider__slide">
+              <a class="slider-link" href="#">
+                <img class="slider__item" src="./img/proj2.png" alt="Проект 2" />
+              </a>
+            </li>
+            <li class="glide__slide slider__slide">
+              <a class="slider-link" href="#">
+                <img class="slider__item" src="./img/proj3.png" alt="Проект 3" />
+              </a>
+            </li>
+            <li class="glide__slide slider__slide">
+              <a class="slider-link" href="#">
+                <img class="slider__item" src="./img/proj4.png" alt="Проект 1" />
+              </a>
+            </li>
+            <li class="glide__slide slider__slide">
+              <a class="slider-link" href="#">
+                <img class="slider__item" src="./img/proj1.png" alt="Проект 1" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="slider__glide-arrows" data-glide-el="controls">
+          <button class="slider__controls slider__controls--left" data-glide-dir="<">
+            <svg class="slider__arrow" width="25" height="25" aria-hidden="true">
+              <use xlink:href="./img/sprite.svg#icon-slider-arrow"></use>
+            </svg>
+          </button>
+          <button class="slider__controls slider__controls--right" data-glide-dir=">">
+            <svg class="slider__arrow" width="25" height="25" aria-hidden="true">
+              <use xlink:href="./img/sprite.svg#icon-slider-arrow"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- END SECTION slider -->
+
+    <!-- SECTION news -->
+    <section class="news">
+      <div class="section-wrapper">
+        <h2 class="section-title">Новости</h2>
+
+        <ul class="news__list">
+          <li class="news__item">
+            <img class="news__cover" src="./img/news1.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                В Крыму появился каталог молодых крымскотатарских художников
+              </h3>
+              <span class="news__item-text">В Симферополе состоялась презентация книжной новинки –
+                каталога «YAŞ QIRIMTATAR RESSAMLARI» (“Молодые
+                крымскотатарские художники”) По словам составителя альбома,
+                редактор</span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  12.02.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+          <li class="news__item">
+            <img class="news__cover" src="./img/news2.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                Лейля Бикеч: победительница «батлов» времен Крымского ханства
+              </h3>
+              <span class="news__item-text">Этим строкам более 400 лет. Вы читаете их кириллицей, хотя
+                созданы и записаны они были арабскими буквами – еще сто лет
+                назад в Крыму использовали арабскую вязь.
+              </span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  18.02.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+          <li class="news__item">
+            <img class="news__cover" src="./img/news3.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                Энвер Измайлов – человек, который заставил гитару плакать
+              </h3>
+              <span class="news__item-text">“Талант – единственная новость, которая всегда свежа”, – эту
+                мысль Бориса Пастернака я не так часто, к сожалению,
+                вспоминаю, в последнее время, но вот и повод.</span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  25.02.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+          <li class="news__item">
+            <img class="news__cover" src="./img/news7.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                ТОП сервисов для изучения крымскотатарского языка
+              </h3>
+              <span class="news__item-text">Сколько языков ты знаешь, столько раз ты человек». Но без
+                знания родного языка эта великая истина, увы, не работает. Для
+                изучения крымкотатарского языка сегодня существует ряд
+                сервисов на любой вкус и для разного уровня подготовки. CANLI
+                подготовило для вас топ сервисов для изучения
+                крымскотатарского языка.</span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  25.02.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+          <li class="news__item">
+            <img class="news__cover" src="./img/news4.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                КГБ, колонии и музыка: из истории крымскотатарской эстрады
+              </h3>
+              <span class="news__item-text">Среди имен тех, кто в советское время в условиях давления и
+                репрессий, создавал крымскотатарскую современную музыку –
+                эстраду, джаз, рок – есть и имя Энвера Мустафаева (Джанай).
+                Родился в ссылке в 1956 году в поселке Палванташ Андижанской
+                области Узбекистана. В 12 лет Энвер победил в конкурсе, где
+                впервые исполнил свою авторскую песню. Это победа подтолкнула
+                юношу к решению серьезно заняться музыкой.</span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  26.02.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+          <li class="news__item">
+            <img class="news__cover" src="./img/news6.png" alt="Обложка новости..." />
+            <div class="news__item-wrapper">
+              <h3 class="news__item-title">
+                Концерт как редкое явление в культурной жизни Крыма
+              </h3>
+              <span class="news__item-text">Концерт при участии Эльвиры Сарыхалил (вокал), Расима
+                Рамазанова (клавиши), Марлена Халилова (перкуссии) и Рустема
+                Куртмеметова (скрипка) оказался весьма интересным, ярким,
+                содержательным и впечатляющим. Находясь в едином порыве, в
+                полной гармонии чувств, и мастерски используя все средства
+                выразительности своих инструментов, музыканты искусно
+                раскрывали для слушателей богатую, многогранную, наполненную
+                живой силой музыкальную культуру нашего народа.</span>
+              <div class="news__item-footer">
+                <time class="news__item-date" datetime="2019-02-14">
+                  <svg class="news__item-icon" width="20" height="20">
+                    <use xlink:href="./img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                  02.03.2019
+                </time>
+                <button class="news__button-more">Подробнее</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a class="news__all-button-link" href="#">
+          <button class="news__all-button">Все новости</button>
+        </a>
+      </div>
+    </section>
+    <!-- END SECTION news -->
+
+    <!-- SECTION sponsors -->
+    <section class="sponsors">
+      <div class="section-wrapper">
+        <h2 class="section-title sponsors__title">Партнеры</h2>
+        <div class="sponsors__slider-glide slider__glide">
+          <div class="slider__wrapper glide__track" data-glide-el="track">
+            <ul class="glide__slides slider__slides">
+              <li class="glide__slide slider__slide">
+                <img class="sponsors__list-item " src="./img/sponsor1.png" alt="Партнер" />
+              </li>
+              <li class="glide__slide slider__slide">
+                <img class="sponsors__list-item " src="./img/sponsor2.png" alt="Партнер" />
+              </li>
+              <li class="glide__slide slider__slide">
+                <img class="sponsors__list-item " src="./img/sponsor3.png" alt="Партнер" />
+              </li>
+              <li class="glide__slide slider__slide">
+                <img class="sponsors__list-item " src="./img/sponsor4.png" alt="Партнер" />
+              </li>
+              <li class="glide__slide slider__slide">
+                <img class="sponsors__list-item " src="./img/sponsor5.png" alt="Партнер" />
+              </li>
+            </ul>
+          </div>
+
+          <div class="slider__glide-arrows sponsors__slider" data-glide-el="controls">
+            <button class="slider__controls slider__controls--left sponsors__slider-controls--left" data-glide-dir="<">
+              <svg class="slider__arrow sponsors__slider-arrow" width="25" height="25" aria-hidden="true">
+                <use xlink:href="./img/sprite.svg#icon-slider-arrow"></use>
+              </svg>
+            </button>
+            <button class="slider__controls slider__controls--right sponsors__slider-controls--right"
+              data-glide-dir=">">
+              <svg class="slider__arrow sponsors__slider-arrow" width="25" height="25" aria-hidden="true">
+                <use xlink:href="./img/sprite.svg#icon-slider-arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END SECTION sponsors -->
+  </main>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="section-wrapper">
+      <ul class="footer__list">
+        <li class="footer__list-item">
+          <a href="#">
+            <img class="footer__logo" src="./img/logo2.png" alt="Логотип Canli Radio">
+          </a>
+          <span class="footer__copyright">2017-2019 Все права защищены</span>
+          <a class="site-header__donate-link footer__donate-link" href="#"
+            title="Поддержать проект Canli Radio">Поддержать проект</a>
+        </li>
+        <!-- Соцсети -->
+        <li class="footer__list-item">
+          <ul class="footer__sublist">
+            <li class="footer__sublist-item">Соцсети</li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Canli Radio в YouTube"><i class="fab fa-youtube"></i>
+                YouTube</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Canli Radio в Facebook"><i class="fab fa-facebook"></i>
+                Facebook</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Canli Radio в Instagram"><i class="fab fa-instagram"></i>
+                Instagram</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Canli Radio Вконтакте"><i class="fab fa-vk"></i>
+                Вконтакте</a>
+            </li>
+          </ul>
+        </li>
+        <!-- Информация -->
+        <li class="footer__list-item">
+          <ul class="footer__sublist">
+            <li class="footer__sublist-item">Информация</li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="О проекте">О проекте</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Спецпроекты">Спецпроекты</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Аудиокниги">Аудиокниги</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#" title="Язык">Язык</a>
+            </li>
+          </ul>
+        </li>
+        <!-- Радиостанции -->
+        <li class="footer__list-item">
+          <ul class="footer__sublist">
+            <li class="footer__sublist-item">Радиостанции</li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#">Станция Folk</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#">Станция Pop</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#">Станция Retro</a>
+            </li>
+            <li class="footer__sublist-item">
+              <a class="footer__sublist-link" href="#">Станция Kids</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
