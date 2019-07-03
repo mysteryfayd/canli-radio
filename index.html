@@ -105,64 +105,67 @@
     <section class="player">
       <div class="player__main">
         <div class="player__previous-song">
-          <h2>РЕАНА ТАРКОВА & JAMDEEN - Мавы Бонджук</h2>
-          <p>предыдущая песня</p>
+          <span>предыдущая песня</span>
+          <h2>РЕАНА ТАРКОВА & JAMDEEN</h2>
+          <h3>Мавы Бонджук</h3>
         </div>
 
         <div class="player__current-song">
-          <!-- autoplay -->
-          <!-- <audio src="http://212.110.158.134:8000/canli" controls></audio> -->
-
           <div id="station0" class="station">
-            <button class="player__btn">
-              <svg class="player__icon player__icon-play" width="50" height="50">
+            <div id="live0" class="player__icon-pause">
+              <svg class="player__icon " width="50" height="50">
+                <use xlink:href="./img/sprite.svg#icon-pause"></use>
+              </svg>
+            </div>
+            <div id="playing0" class="player__icon-play">
+              <svg class="player__icon" width="50" height="50">
                 <use xlink:href="./img/sprite.svg#icon-play"></use>
               </svg>
-              <!-- <svg class="player__icon player__icon-pause" width="50" height="50">
-                <use xlink:href="./img/sprite.svg#icon-pause"></use>
-              </svg> -->
-            </button>
-            <div class="title">
-              <div id="title0" class="subtitle"></div>
-              <div id="live0" class="live">Live</div>
-              <div id="playing0" class="playing"></div>
             </div>
           </div>
           <!-- <input id="sliderBtn" class="player__volume" type="range" min="0" max="1" step="0.01" value=1> -->
-          <!-- текушая песня -->
         </div>
         <!-- END PLAYER -->
 
         <div class="player__next-song">
-          <h2>BOBAN MARKOVICH ORCHESTRA - Benim Gecem</h2>
-          <p>следующая песня</p>
+          <span>следующая песня</span>
+          <h2>BOBAN MARKOVICH</h2>
+          <h3>Benim Gecem</h3>
         </div>
       </div>
 
       <ul class="player__genre">
         <li class="player__genre-item">
-          <svg class="player__icon player__genre-item-play" width="25" height="25">
-            <use xlink:href="./img/sprite.svg#icon-play"></use>
-          </svg>
-          <p class="player__genre-item-title">Pop</p>
+          <a class="player__genre-link" href="#" title="Радио жанра Поп">
+            <svg class="player__icon player__genre-item-play" width="25" height="25">
+              <use xlink:href="./img/sprite.svg#icon-pop"></use>
+            </svg>
+            <p class="player__genre-item-title">Pop</p>
+          </a>
         </li>
         <li class="player__genre-item">
-          <svg class="player__icon player__genre-item-play" width="25" height="25">
-            <use xlink:href="./img/sprite.svg#icon-play"></use>
-          </svg>
-          <p class="player__genre-item-title">Jazz</p>
+          <a class="player__genre-link" href="#" title="Радио жанра Джаз">
+            <svg class="player__icon player__genre-item-play" width="25" height="25">
+              <use xlink:href="./img/sprite.svg#icon-jazz"></use>
+            </svg>
+            <p class="player__genre-item-title">Jazz</p>
+          </a>
         </li>
         <li class="player__genre-item">
-          <svg class="player__icon player__genre-item-play" width="25" height="25">
-            <use xlink:href="./img/sprite.svg#icon-play"></use>
-          </svg>
-          <p class="player__genre-item-title">Retro</p>
+          <a class="player__genre-link" href="#" title="Радио жанра Ретро">
+            <svg class="player__icon player__genre-item-play" width="25" height="25">
+              <use xlink:href="./img/sprite.svg#icon-retro"></use>
+            </svg>
+            <p class="player__genre-item-title">Retro</p>
+          </a>
         </li>
         <li class="player__genre-item">
-          <svg class="player__icon player__genre-item-play" width="25" height="25">
-            <use xlink:href="./img/sprite.svg#icon-play"></use>
-          </svg>
-          <p class="player__genre-item-title">Kids</p>
+          <a class="player__genre-link" href="#" title="Радио для детей">
+            <svg class="player__icon player__genre-item-play" width="25" height="25">
+              <use xlink:href="./img/sprite.svg#icon-kids"></use>
+            </svg>
+            <p class="player__genre-item-title">Kids</p>
+          </a>
         </li>
       </ul>
     </section>
@@ -478,6 +481,34 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
   <script src="js/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@2.6.3/lib/bodyScrollLock.min.js"></script>
+  <!-- <script src="/node_modules/body-scroll-lock/lib/bodyScrollLock.js"></script> -->
+  <script>
+    const menu = document.querySelector('#toggle');
+    const menuItems = document.querySelector('#overlay');
+    const menuContainer = document.querySelector('.menu-container');
+    const menuIcon = document.querySelector('i');
+
+    function toggleMenu(e) {
+      menuItems.classList.toggle('open');
+      menuContainer.classList.toggle('full-menu');
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
+      e.preventDefault();
+
+      (menuItems.classList.contains('open')) ? bodyScrollLock.disableBodyScroll() : bodyScrollLock.enableBodyScroll();
+    }
+
+    menu.addEventListener('click', toggleMenu, false);
+  </script>
+
+  <!-- <script>
+    $('#con1').on('click', function() {
+      $(this).toggleClass('class');
+    });
+  </script> -->
+
 </body>
 
 </html>
