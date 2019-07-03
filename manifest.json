@@ -3,7 +3,7 @@
   "name": "Canli Radio",
   "description": "Canli Radio – Crimean Tatar's Online Radio",
   "orientation": "portrait",
-  "start_url": "page.html",
+  "start_url": "index.html",
   "display": "standalone",
   "theme_color": "#ffc901",
   "background_color": "#ffc901",
